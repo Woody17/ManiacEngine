@@ -1,0 +1,13 @@
+{
+  "name": "maniac-engine",
+  "version": "0.1.0",
+  "description": "A simple JS based 3D engine. Based off the awesome videos by One Lone Coder (https://www.youtube.com/watch?v=wNRf2FDm954)",
+  "scripts": {
+    "start": "npm run webpack",
+    "webpack": "webpack -d --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^3.12.0"
+  }
+}

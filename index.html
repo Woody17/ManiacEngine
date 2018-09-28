@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Maniac Engine</title>
+  <meta name="description" content="A simple 3D engine demo">
+  <link rel="stylesheet" href="css/style.css?v=1.0">
+
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script src="dist/bundle.js"></script>
+  <script src="dist/jquery.min.js"></script>
+  <script>
+    var z = 3;
+    $(window).on('load', function() {
+      var engine = new ManiacEngine.Engine();
+      engine.run(function() {
+        // Coffee Cup
+        var cup = new ManiacEngine.Model(ManiacEngine.Primitives.Padlock());
+        z+= 0.01;
+        cup.rotation =  new ManiacEngine.Vector(z, z, z);
+        cup.translation = new ManiacEngine.Vector(0, 0, 100);
+
+        // Cube
+        var cube = new ManiacEngine.Model();
+        cube.rotation = new ManiacEngine.Vector(z, z, 0);
+        cube.translation = new ManiacEngine.Vector(10, 0, 10);
+
+	      return [cup, cube];
+      }, function() {
+	      // Run Forever
+	      return false;
+      });
+    });
+  </script>
+</body>
+</html>
